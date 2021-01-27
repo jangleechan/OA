@@ -1,0 +1,189 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heima8.OA.EFDAL", "Heima8.OA.EFDAL\Heima8.OA.EFDAL.csproj", "{0FBBE2DF-FBC7-4F69-97FB-D8907CBD2D38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heima8.OA.BLL", "Heima8.OA.BLL\Heima8.OA.BLL.csproj", "{829FCACD-10F5-4597-B51F-CAA9D49502A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heima8.OA.Common", "Heima8.OA.Common\Heima8.OA.Common.csproj", "{11ADD9DA-96D6-495C-A4AF-5D9BA2230AC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heima8.OA.UnitTest", "Heima8.OA.UnitTest\Heima8.OA.UnitTest.csproj", "{E5A64AA1-C088-41FC-A1C8-E256B52167F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heima8.OA.Model", "Heima8.OA.Model\Heima8.OA.Model.csproj", "{E4A232F8-2D5A-4C1B-8478-CB6D6E67433D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heima8.OA.IDAL", "Heima8.OA.IDAL\Heima8.OA.IDAL.csproj", "{CEA51772-B054-42A6-AABC-B6E87CF42E0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heima8.OA.NHDAL", "Heima8.OA.NHDAL\Heima8.OA.NHDAL.csproj", "{ECB11970-5F73-4428-A21A-69E2570DB4AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heima8.OA.DALFactory", "Heima8.OA.DALFactory\Heima8.OA.DALFactory.csproj", "{36AE8359-CE6A-477F-82A3-E4868FE4E877}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heima8.OA.IBLL", "Heima8.OA.IBLL\Heima8.OA.IBLL.csproj", "{860244D0-0143-40DD-AD80-BC72199789D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{E64D0450-6CB6-42C0-8D2B-E7298AC7C3A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{1190345C-9437-4EE4-AC48-D2AC70F74FB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{F05FB471-DBFB-4644-9BD7-1584454B39AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{DECA51AE-FDBE-40AF-BEF7-254701E86A5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{BFFBBC9C-E57A-4EA8-8C02-1EC210ED40DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{28A18D8B-BCC2-489D-B7BF-31BA644BC9F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demos", "Demos", "{99985A0D-ED36-4118-A754-32F3FBDEC79B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpringNetDemo", "SpringNetDemo\SpringNetDemo.csproj", "{3AD1DCED-9298-4EBF-A07E-974379443BEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T4Demos", "T4Demos\T4Demos.csproj", "{C66456E3-996F-4493-91F7-16DBB2C9102C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heima8.OA.UI.Portal", "Heima8.OA.UI.Portal\Heima8.OA.UI.Portal.csproj", "{6155877D-2C08-4D19-BD9C-B4D4EC04BC22}"
+	ProjectSection(ProjectDependencies) = postProject
+		{36AE8359-CE6A-477F-82A3-E4868FE4E877} = {36AE8359-CE6A-477F-82A3-E4868FE4E877}
+		{CEA51772-B054-42A6-AABC-B6E87CF42E0A} = {CEA51772-B054-42A6-AABC-B6E87CF42E0A}
+		{829FCACD-10F5-4597-B51F-CAA9D49502A9} = {829FCACD-10F5-4597-B51F-CAA9D49502A9}
+		{11ADD9DA-96D6-495C-A4AF-5D9BA2230AC0} = {11ADD9DA-96D6-495C-A4AF-5D9BA2230AC0}
+		{0FBBE2DF-FBC7-4F69-97FB-D8907CBD2D38} = {0FBBE2DF-FBC7-4F69-97FB-D8907CBD2D38}
+		{E4A232F8-2D5A-4C1B-8478-CB6D6E67433D} = {E4A232F8-2D5A-4C1B-8478-CB6D6E67433D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log4NetDemo", "Log4NetDemo\Log4NetDemo.csproj", "{18D8D037-37A7-4ED2-85E2-0201267479B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FBBE2DF-FBC7-4F69-97FB-D8907CBD2D38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FBBE2DF-FBC7-4F69-97FB-D8907CBD2D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FBBE2DF-FBC7-4F69-97FB-D8907CBD2D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FBBE2DF-FBC7-4F69-97FB-D8907CBD2D38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{829FCACD-10F5-4597-B51F-CAA9D49502A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{829FCACD-10F5-4597-B51F-CAA9D49502A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{829FCACD-10F5-4597-B51F-CAA9D49502A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{829FCACD-10F5-4597-B51F-CAA9D49502A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11ADD9DA-96D6-495C-A4AF-5D9BA2230AC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11ADD9DA-96D6-495C-A4AF-5D9BA2230AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11ADD9DA-96D6-495C-A4AF-5D9BA2230AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11ADD9DA-96D6-495C-A4AF-5D9BA2230AC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5A64AA1-C088-41FC-A1C8-E256B52167F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5A64AA1-C088-41FC-A1C8-E256B52167F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5A64AA1-C088-41FC-A1C8-E256B52167F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5A64AA1-C088-41FC-A1C8-E256B52167F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4A232F8-2D5A-4C1B-8478-CB6D6E67433D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4A232F8-2D5A-4C1B-8478-CB6D6E67433D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4A232F8-2D5A-4C1B-8478-CB6D6E67433D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4A232F8-2D5A-4C1B-8478-CB6D6E67433D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEA51772-B054-42A6-AABC-B6E87CF42E0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEA51772-B054-42A6-AABC-B6E87CF42E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEA51772-B054-42A6-AABC-B6E87CF42E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEA51772-B054-42A6-AABC-B6E87CF42E0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECB11970-5F73-4428-A21A-69E2570DB4AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECB11970-5F73-4428-A21A-69E2570DB4AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECB11970-5F73-4428-A21A-69E2570DB4AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECB11970-5F73-4428-A21A-69E2570DB4AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36AE8359-CE6A-477F-82A3-E4868FE4E877}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36AE8359-CE6A-477F-82A3-E4868FE4E877}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36AE8359-CE6A-477F-82A3-E4868FE4E877}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36AE8359-CE6A-477F-82A3-E4868FE4E877}.Release|Any CPU.Build.0 = Release|Any CPU
+		{860244D0-0143-40DD-AD80-BC72199789D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{860244D0-0143-40DD-AD80-BC72199789D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{860244D0-0143-40DD-AD80-BC72199789D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{860244D0-0143-40DD-AD80-BC72199789D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AD1DCED-9298-4EBF-A07E-974379443BEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AD1DCED-9298-4EBF-A07E-974379443BEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AD1DCED-9298-4EBF-A07E-974379443BEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AD1DCED-9298-4EBF-A07E-974379443BEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C66456E3-996F-4493-91F7-16DBB2C9102C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C66456E3-996F-4493-91F7-16DBB2C9102C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C66456E3-996F-4493-91F7-16DBB2C9102C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C66456E3-996F-4493-91F7-16DBB2C9102C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6155877D-2C08-4D19-BD9C-B4D4EC04BC22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6155877D-2C08-4D19-BD9C-B4D4EC04BC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6155877D-2C08-4D19-BD9C-B4D4EC04BC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6155877D-2C08-4D19-BD9C-B4D4EC04BC22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D8D037-37A7-4ED2-85E2-0201267479B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D8D037-37A7-4ED2-85E2-0201267479B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D8D037-37A7-4ED2-85E2-0201267479B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D8D037-37A7-4ED2-85E2-0201267479B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0FBBE2DF-FBC7-4F69-97FB-D8907CBD2D38} = {E64D0450-6CB6-42C0-8D2B-E7298AC7C3A8}
+		{829FCACD-10F5-4597-B51F-CAA9D49502A9} = {1190345C-9437-4EE4-AC48-D2AC70F74FB7}
+		{11ADD9DA-96D6-495C-A4AF-5D9BA2230AC0} = {DECA51AE-FDBE-40AF-BEF7-254701E86A5A}
+		{E5A64AA1-C088-41FC-A1C8-E256B52167F2} = {28A18D8B-BCC2-489D-B7BF-31BA644BC9F6}
+		{E4A232F8-2D5A-4C1B-8478-CB6D6E67433D} = {F05FB471-DBFB-4644-9BD7-1584454B39AF}
+		{CEA51772-B054-42A6-AABC-B6E87CF42E0A} = {E64D0450-6CB6-42C0-8D2B-E7298AC7C3A8}
+		{ECB11970-5F73-4428-A21A-69E2570DB4AA} = {E64D0450-6CB6-42C0-8D2B-E7298AC7C3A8}
+		{36AE8359-CE6A-477F-82A3-E4868FE4E877} = {E64D0450-6CB6-42C0-8D2B-E7298AC7C3A8}
+		{860244D0-0143-40DD-AD80-BC72199789D6} = {1190345C-9437-4EE4-AC48-D2AC70F74FB7}
+		{3AD1DCED-9298-4EBF-A07E-974379443BEA} = {99985A0D-ED36-4118-A754-32F3FBDEC79B}
+		{C66456E3-996F-4493-91F7-16DBB2C9102C} = {99985A0D-ED36-4118-A754-32F3FBDEC79B}
+		{6155877D-2C08-4D19-BD9C-B4D4EC04BC22} = {BFFBBC9C-E57A-4EA8-8C02-1EC210ED40DC}
+		{18D8D037-37A7-4ED2-85E2-0201267479B1} = {99985A0D-ED36-4118-A754-32F3FBDEC79B}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 14
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://172.16.100.86:8080/tfs/heima
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Heima8.OA.BLL\\Heima8.OA.BLL.csproj
+		SccProjectTopLevelParentUniqueName1 = Heima8.OA.sln
+		SccProjectName1 = Heima8.OA.BLL
+		SccLocalPath1 = Heima8.OA.BLL
+		SccProjectUniqueName2 = Heima8.OA.Common\\Heima8.OA.Common.csproj
+		SccProjectTopLevelParentUniqueName2 = Heima8.OA.sln
+		SccProjectName2 = Heima8.OA.Common
+		SccLocalPath2 = Heima8.OA.Common
+		SccProjectUniqueName3 = Heima8.OA.DALFactory\\Heima8.OA.DALFactory.csproj
+		SccProjectTopLevelParentUniqueName3 = Heima8.OA.sln
+		SccProjectName3 = Heima8.OA.DALFactory
+		SccLocalPath3 = Heima8.OA.DALFactory
+		SccProjectUniqueName4 = Heima8.OA.EFDAL\\Heima8.OA.EFDAL.csproj
+		SccProjectTopLevelParentUniqueName4 = Heima8.OA.sln
+		SccProjectName4 = Heima8.OA.EFDAL
+		SccLocalPath4 = Heima8.OA.EFDAL
+		SccProjectUniqueName5 = Heima8.OA.IBLL\\Heima8.OA.IBLL.csproj
+		SccProjectTopLevelParentUniqueName5 = Heima8.OA.sln
+		SccProjectName5 = Heima8.OA.IBLL
+		SccLocalPath5 = Heima8.OA.IBLL
+		SccProjectUniqueName6 = Heima8.OA.IDAL\\Heima8.OA.IDAL.csproj
+		SccProjectTopLevelParentUniqueName6 = Heima8.OA.sln
+		SccProjectName6 = Heima8.OA.IDAL
+		SccLocalPath6 = Heima8.OA.IDAL
+		SccProjectUniqueName7 = Heima8.OA.Model\\Heima8.OA.Model.csproj
+		SccProjectTopLevelParentUniqueName7 = Heima8.OA.sln
+		SccProjectName7 = Heima8.OA.Model
+		SccLocalPath7 = Heima8.OA.Model
+		SccProjectUniqueName8 = Heima8.OA.NHDAL\\Heima8.OA.NHDAL.csproj
+		SccProjectTopLevelParentUniqueName8 = Heima8.OA.sln
+		SccProjectName8 = Heima8.OA.NHDAL
+		SccLocalPath8 = Heima8.OA.NHDAL
+		SccProjectUniqueName9 = Heima8.OA.UnitTest\\Heima8.OA.UnitTest.csproj
+		SccProjectTopLevelParentUniqueName9 = Heima8.OA.sln
+		SccProjectName9 = Heima8.OA.UnitTest
+		SccLocalPath9 = Heima8.OA.UnitTest
+		SccProjectUniqueName10 = SpringNetDemo\\SpringNetDemo.csproj
+		SccProjectTopLevelParentUniqueName10 = Heima8.OA.sln
+		SccProjectName10 = SpringNetDemo
+		SccLocalPath10 = SpringNetDemo
+		SccProjectUniqueName11 = T4Demos\\T4Demos.csproj
+		SccProjectTopLevelParentUniqueName11 = Heima8.OA.sln
+		SccProjectName11 = T4Demos
+		SccLocalPath11 = T4Demos
+		SccProjectUniqueName12 = Heima8.OA.UI.Portal\\Heima8.OA.UI.Portal.csproj
+		SccProjectTopLevelParentUniqueName12 = Heima8.OA.sln
+		SccProjectName12 = Heima8.OA.UI.Portal
+		SccLocalPath12 = Heima8.OA.UI.Portal
+		SccProjectUniqueName13 = Log4NetDemo\\Log4NetDemo.csproj
+		SccProjectTopLevelParentUniqueName13 = Heima8.OA.sln
+		SccProjectName13 = Log4NetDemo
+		SccLocalPath13 = Log4NetDemo
+	EndGlobalSection
+EndGlobal

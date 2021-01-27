@@ -1,0 +1,640 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ContextModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ContextModelStoreContainer">
+    <EntitySet Name="UserInfo" EntityType="ContextModel.Store.UserInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderInfo" EntityType="ContextModel.Store.OrderInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RoleInfo" EntityType="ContextModel.Store.RoleInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ActionInfo" EntityType="ContextModel.Store.ActionInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="R_UserInfo_ActionInfo" EntityType="ContextModel.Store.R_UserInfo_ActionInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserInfoExt" EntityType="ContextModel.Store.UserInfoExt" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DailyWork" EntityType="ContextModel.Store.DailyWork" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SysDept" EntityType="ContextModel.Store.SysDept" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserInfoRoleInfo" EntityType="ContextModel.Store.UserInfoRoleInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RoleInfoActionInfo" EntityType="ContextModel.Store.RoleInfoActionInfo" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UserInfoOrderInfo" Association="ContextModel.Store.UserInfoOrderInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="OrderInfo" EntitySet="OrderInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfoRoleInfo_UserInfo" Association="ContextModel.Store.FK_UserInfoRoleInfo_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserInfoRoleInfo" EntitySet="UserInfoRoleInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfoRoleInfo_RoleInfo" Association="ContextModel.Store.FK_UserInfoRoleInfo_RoleInfo">
+      <End Role="RoleInfo" EntitySet="RoleInfo" />
+      <End Role="UserInfoRoleInfo" EntitySet="UserInfoRoleInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleInfoActionInfo_RoleInfo" Association="ContextModel.Store.FK_RoleInfoActionInfo_RoleInfo">
+      <End Role="RoleInfo" EntitySet="RoleInfo" />
+      <End Role="RoleInfoActionInfo" EntitySet="RoleInfoActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleInfoActionInfo_ActionInfo" Association="ContextModel.Store.FK_RoleInfoActionInfo_ActionInfo">
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+      <End Role="RoleInfoActionInfo" EntitySet="RoleInfoActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="UserInfoR_UserInfo_ActionInfo" Association="ContextModel.Store.UserInfoR_UserInfo_ActionInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="R_UserInfo_ActionInfo" EntitySet="R_UserInfo_ActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="R_UserInfo_ActionInfoActionInfo" Association="ContextModel.Store.R_UserInfo_ActionInfoActionInfo">
+      <End Role="R_UserInfo_ActionInfo" EntitySet="R_UserInfo_ActionInfo" />
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="UserInfoDailyWork" Association="ContextModel.Store.UserInfoDailyWork">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="DailyWork" EntitySet="DailyWork" />
+    </AssociationSet>
+    <AssociationSet Name="SysDeptDailyWork" Association="ContextModel.Store.SysDeptDailyWork">
+      <End Role="SysDept" EntitySet="SysDept" />
+      <End Role="DailyWork" EntitySet="DailyWork" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Pwd" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ShowName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserInfoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoleInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ActionInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="Url" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HttpMethod" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ActionName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsMenu" Type="bit" Nullable="false" />
+    <Property Name="MenuIcon" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sort" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="R_UserInfo_ActionInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HasPermission" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserInfo_Id" Type="int" Nullable="false" />
+    <Property Name="ActionInfo_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserInfoExt">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserInfoId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DailyWork">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WorkContent" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="WorkDept" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SqlLog" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="LogFile" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="UserInfoId" Type="int" Nullable="false" />
+    <Property Name="SysDeptId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SysDept">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeptName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DeptType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserInfoRoleInfo">
+    <Key>
+      <PropertyRef Name="UserInfo_Id" />
+      <PropertyRef Name="RoleInfo_Id" />
+    </Key>
+    <Property Name="UserInfo_Id" Type="int" Nullable="false" />
+    <Property Name="RoleInfo_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoleInfoActionInfo">
+    <Key>
+      <PropertyRef Name="RoleInfo_Id" />
+      <PropertyRef Name="ActionInfo_Id" />
+    </Key>
+    <Property Name="RoleInfo_Id" Type="int" Nullable="false" />
+    <Property Name="ActionInfo_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="UserInfoOrderInfo">
+    <End Role="UserInfo" Type="ContextModel.Store.UserInfo" Multiplicity="1" />
+    <End Role="OrderInfo" Type="ContextModel.Store.OrderInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderInfo">
+        <PropertyRef Name="UserInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserInfoR_UserInfo_ActionInfo">
+    <End Role="UserInfo" Type="ContextModel.Store.UserInfo" Multiplicity="1" />
+    <End Role="R_UserInfo_ActionInfo" Type="ContextModel.Store.R_UserInfo_ActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="R_UserInfo_ActionInfo">
+        <PropertyRef Name="UserInfo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_UserInfo_ActionInfoActionInfo">
+    <End Role="R_UserInfo_ActionInfo" Type="ContextModel.Store.R_UserInfo_ActionInfo" Multiplicity="*" />
+    <End Role="ActionInfo" Type="ContextModel.Store.ActionInfo" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="ActionInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="R_UserInfo_ActionInfo">
+        <PropertyRef Name="ActionInfo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserInfoDailyWork">
+    <End Role="UserInfo" Type="ContextModel.Store.UserInfo" Multiplicity="1" />
+    <End Role="DailyWork" Type="ContextModel.Store.DailyWork" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DailyWork">
+        <PropertyRef Name="UserInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SysDeptDailyWork">
+    <End Role="SysDept" Type="ContextModel.Store.SysDept" Multiplicity="1" />
+    <End Role="DailyWork" Type="ContextModel.Store.DailyWork" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SysDept">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DailyWork">
+        <PropertyRef Name="SysDeptId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfoRoleInfo_UserInfo">
+    <End Role="UserInfo" Type="ContextModel.Store.UserInfo" Multiplicity="1" />
+    <End Role="UserInfoRoleInfo" Type="ContextModel.Store.UserInfoRoleInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInfoRoleInfo">
+        <PropertyRef Name="UserInfo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfoRoleInfo_RoleInfo">
+    <End Role="UserInfoRoleInfo" Type="ContextModel.Store.UserInfoRoleInfo" Multiplicity="*" />
+    <End Role="RoleInfo" Type="ContextModel.Store.RoleInfo" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="RoleInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInfoRoleInfo">
+        <PropertyRef Name="RoleInfo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleInfoActionInfo_RoleInfo">
+    <End Role="RoleInfo" Type="ContextModel.Store.RoleInfo" Multiplicity="1" />
+    <End Role="RoleInfoActionInfo" Type="ContextModel.Store.RoleInfoActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleInfoActionInfo">
+        <PropertyRef Name="RoleInfo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleInfoActionInfo_ActionInfo">
+    <End Role="RoleInfoActionInfo" Type="ContextModel.Store.RoleInfoActionInfo" Multiplicity="*" />
+    <End Role="ActionInfo" Type="ContextModel.Store.ActionInfo" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="ActionInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleInfoActionInfo">
+        <PropertyRef Name="ActionInfo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ContextModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ContextModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UserInfo" EntityType="ContextModel.UserInfo" />
+          <EntitySet Name="OrderInfo" EntityType="ContextModel.OrderInfo" />
+          <AssociationSet Name="UserInfoOrderInfo" Association="ContextModel.UserInfoOrderInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="OrderInfo" EntitySet="OrderInfo" />
+          </AssociationSet>
+          <EntitySet Name="RoleInfo" EntityType="ContextModel.RoleInfo" />
+          <EntitySet Name="ActionInfo" EntityType="ContextModel.ActionInfo" />
+          <AssociationSet Name="UserInfoRoleInfo" Association="ContextModel.UserInfoRoleInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="RoleInfo" EntitySet="RoleInfo" />
+          </AssociationSet>
+          <AssociationSet Name="RoleInfoActionInfo" Association="ContextModel.RoleInfoActionInfo">
+            <End Role="RoleInfo" EntitySet="RoleInfo" />
+            <End Role="ActionInfo" EntitySet="ActionInfo" />
+          </AssociationSet>
+          <EntitySet Name="R_UserInfo_ActionInfo" EntityType="ContextModel.R_UserInfo_ActionInfo" />
+          <AssociationSet Name="UserInfoR_UserInfo_ActionInfo" Association="ContextModel.UserInfoR_UserInfo_ActionInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="R_UserInfo_ActionInfo" EntitySet="R_UserInfo_ActionInfo" />
+          </AssociationSet>
+          <AssociationSet Name="R_UserInfo_ActionInfoActionInfo" Association="ContextModel.R_UserInfo_ActionInfoActionInfo">
+            <End Role="R_UserInfo_ActionInfo" EntitySet="R_UserInfo_ActionInfo" />
+            <End Role="ActionInfo" EntitySet="ActionInfo" />
+          </AssociationSet>
+          <EntitySet Name="UserInfoExt" EntityType="ContextModel.UserInfoExt" />
+          <EntitySet Name="DailyWork" EntityType="ContextModel.DailyWork" />
+          <AssociationSet Name="UserInfoDailyWork" Association="ContextModel.UserInfoDailyWork">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="DailyWork" EntitySet="DailyWork" />
+          </AssociationSet>
+          <EntitySet Name="SysDept" EntityType="ContextModel.SysDept" />
+          <AssociationSet Name="SysDeptDailyWork" Association="ContextModel.SysDeptDailyWork">
+            <End Role="SysDept" EntitySet="SysDept" />
+            <End Role="DailyWork" EntitySet="DailyWork" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UName" Type="String" Nullable="false" />
+          <NavigationProperty Name="OrderInfo" Relationship="ContextModel.UserInfoOrderInfo" FromRole="UserInfo" ToRole="OrderInfo" />
+          <Property Name="Pwd" Type="String" Nullable="false" />
+          <Property Name="ShowName" Type="String" Nullable="false" />
+          <Property Name="DelFlag" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="RoleInfo" Relationship="ContextModel.UserInfoRoleInfo" FromRole="UserInfo" ToRole="RoleInfo" />
+          <NavigationProperty Name="R_UserInfo_ActionInfo" Relationship="ContextModel.UserInfoR_UserInfo_ActionInfo" FromRole="UserInfo" ToRole="R_UserInfo_ActionInfo" />
+          <Property Name="Remark" Type="String" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="SubTime" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="DailyWork" Relationship="ContextModel.UserInfoDailyWork" FromRole="UserInfo" ToRole="DailyWork" />
+        </EntityType>
+        <EntityType Name="OrderInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content" Type="String" Nullable="false" />
+          <NavigationProperty Name="UserInfo" Relationship="ContextModel.UserInfoOrderInfo" FromRole="OrderInfo" ToRole="UserInfo" />
+          <Property Name="UserInfoId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="UserInfoOrderInfo">
+          <End Type="ContextModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="ContextModel.OrderInfo" Role="OrderInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderInfo">
+              <PropertyRef Name="UserInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RoleInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="UserInfo" Relationship="ContextModel.UserInfoRoleInfo" FromRole="RoleInfo" ToRole="UserInfo" />
+          <NavigationProperty Name="ActionInfo" Relationship="ContextModel.RoleInfoActionInfo" FromRole="RoleInfo" ToRole="ActionInfo" />
+          <Property Name="RoleName" Type="String" Nullable="false" />
+          <Property Name="DelFlag" Type="Int16" Nullable="false" />
+          <Property Name="Remark" Type="String" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="SubTime" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActionInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DelFlag" Type="Int16" Nullable="false" />
+          <Property Name="Remark" Type="String" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="SubTime" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="RoleInfo" Relationship="ContextModel.RoleInfoActionInfo" FromRole="ActionInfo" ToRole="RoleInfo" />
+          <NavigationProperty Name="R_UserInfo_ActionInfo" Relationship="ContextModel.R_UserInfo_ActionInfoActionInfo" FromRole="ActionInfo" ToRole="R_UserInfo_ActionInfo" />
+          <Property Name="Url" Type="String" Nullable="false" />
+          <Property Name="HttpMethod" Type="String" Nullable="false" />
+          <Property Name="ActionName" Type="String" Nullable="false" />
+          <Property Name="IsMenu" Type="Boolean" Nullable="false" />
+          <Property Name="MenuIcon" Type="String" Nullable="false" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="UserInfoRoleInfo">
+          <End Type="ContextModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+          <End Type="ContextModel.RoleInfo" Role="RoleInfo" Multiplicity="*" />
+        </Association>
+        <Association Name="RoleInfoActionInfo">
+          <End Type="ContextModel.RoleInfo" Role="RoleInfo" Multiplicity="*" />
+          <End Type="ContextModel.ActionInfo" Role="ActionInfo" Multiplicity="*" />
+        </Association>
+        <EntityType Name="R_UserInfo_ActionInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HasPermission" Type="String" Nullable="false" />
+          <NavigationProperty Name="UserInfo" Relationship="ContextModel.UserInfoR_UserInfo_ActionInfo" FromRole="R_UserInfo_ActionInfo" ToRole="UserInfo" />
+          <NavigationProperty Name="ActionInfo" Relationship="ContextModel.R_UserInfo_ActionInfoActionInfo" FromRole="R_UserInfo_ActionInfo" ToRole="ActionInfo" />
+        </EntityType>
+        <Association Name="UserInfoR_UserInfo_ActionInfo">
+          <End Type="ContextModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="ContextModel.R_UserInfo_ActionInfo" Role="R_UserInfo_ActionInfo" Multiplicity="*" />
+        </Association>
+        <Association Name="R_UserInfo_ActionInfoActionInfo">
+          <End Type="ContextModel.R_UserInfo_ActionInfo" Role="R_UserInfo_ActionInfo" Multiplicity="*" />
+          <End Type="ContextModel.ActionInfo" Role="ActionInfo" Multiplicity="1" />
+        </Association>
+        <EntityType Name="UserInfoExt">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserInfoId" Type="String" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Phone" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DailyWork">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorkName" Type="String" Nullable="false" />
+          <Property Name="WorkContent" Type="String" Nullable="true" />
+          <Property Name="WorkDept" Type="String" Nullable="true" />
+          <Property Name="SqlLog" Type="String" Nullable="true" />
+          <Property Name="LogFile" Type="String" Nullable="true" />
+          <Property Name="Remark" Type="String" Nullable="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="SubTime" Type="DateTime" Nullable="false" />
+          <Property Name="DelFlag" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="UserInfo" Relationship="ContextModel.UserInfoDailyWork" FromRole="DailyWork" ToRole="UserInfo" />
+          <Property Name="UserInfoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SysDept" Relationship="ContextModel.SysDeptDailyWork" FromRole="DailyWork" ToRole="SysDept" />
+          <Property Name="SysDeptId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="UserInfoDailyWork">
+          <End Type="ContextModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="ContextModel.DailyWork" Role="DailyWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailyWork">
+              <PropertyRef Name="UserInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SysDept">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeptName" Type="String" Nullable="false" />
+          <Property Name="DeptType" Type="String" Nullable="false" />
+          <Property Name="Remark" Type="String" Nullable="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="SubTime" Type="DateTime" Nullable="false" />
+          <Property Name="DelFlag" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="DailyWork" Relationship="ContextModel.SysDeptDailyWork" FromRole="SysDept" ToRole="DailyWork" />
+        </EntityType>
+        <Association Name="SysDeptDailyWork">
+          <End Type="ContextModel.SysDept" Role="SysDept" Multiplicity="1" />
+          <End Type="ContextModel.DailyWork" Role="DailyWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysDept">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailyWork">
+              <PropertyRef Name="SysDeptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ContextModelStoreContainer" CdmEntityContainer="ContextModelContainer">
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(ContextModel.UserInfo)">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UName" ColumnName="UName" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="ShowName" ColumnName="ShowName" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(ContextModel.OrderInfo)">
+        <MappingFragment StoreEntitySet="OrderInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(ContextModel.RoleInfo)">
+        <MappingFragment StoreEntitySet="RoleInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActionInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(ContextModel.ActionInfo)">
+        <MappingFragment StoreEntitySet="ActionInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="HttpMethod" ColumnName="HttpMethod" />
+          <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+          <ScalarProperty Name="IsMenu" ColumnName="IsMenu" />
+          <ScalarProperty Name="MenuIcon" ColumnName="MenuIcon" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="R_UserInfo_ActionInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(ContextModel.R_UserInfo_ActionInfo)">
+        <MappingFragment StoreEntitySet="R_UserInfo_ActionInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HasPermission" ColumnName="HasPermission" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfoExt">
+      <EntityTypeMapping TypeName="IsTypeOf(ContextModel.UserInfoExt)">
+        <MappingFragment StoreEntitySet="UserInfoExt">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DailyWork">
+      <EntityTypeMapping TypeName="IsTypeOf(ContextModel.DailyWork)">
+        <MappingFragment StoreEntitySet="DailyWork">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WorkName" ColumnName="WorkName" />
+          <ScalarProperty Name="WorkContent" ColumnName="WorkContent" />
+          <ScalarProperty Name="WorkDept" ColumnName="WorkDept" />
+          <ScalarProperty Name="SqlLog" ColumnName="SqlLog" />
+          <ScalarProperty Name="LogFile" ColumnName="LogFile" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
+          <ScalarProperty Name="SysDeptId" ColumnName="SysDeptId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysDept">
+      <EntityTypeMapping TypeName="IsTypeOf(ContextModel.SysDept)">
+        <MappingFragment StoreEntitySet="SysDept">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+          <ScalarProperty Name="DeptType" ColumnName="DeptType" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="UserInfoRoleInfo" TypeName="ContextModel.UserInfoRoleInfo" StoreEntitySet="UserInfoRoleInfo">
+      <EndProperty Name="UserInfo">
+        <ScalarProperty Name="Id" ColumnName="UserInfo_Id" />
+      </EndProperty>
+      <EndProperty Name="RoleInfo">
+        <ScalarProperty Name="Id" ColumnName="RoleInfo_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RoleInfoActionInfo" TypeName="ContextModel.RoleInfoActionInfo" StoreEntitySet="RoleInfoActionInfo">
+      <EndProperty Name="RoleInfo">
+        <ScalarProperty Name="Id" ColumnName="RoleInfo_Id" />
+      </EndProperty>
+      <EndProperty Name="ActionInfo">
+        <ScalarProperty Name="Id" ColumnName="ActionInfo_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserInfoR_UserInfo_ActionInfo" TypeName="ContextModel.UserInfoR_UserInfo_ActionInfo" StoreEntitySet="R_UserInfo_ActionInfo">
+      <EndProperty Name="UserInfo">
+        <ScalarProperty Name="Id" ColumnName="UserInfo_Id" />
+      </EndProperty>
+      <EndProperty Name="R_UserInfo_ActionInfo">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="R_UserInfo_ActionInfoActionInfo" TypeName="ContextModel.R_UserInfo_ActionInfoActionInfo" StoreEntitySet="R_UserInfo_ActionInfo">
+      <EndProperty Name="ActionInfo">
+        <ScalarProperty Name="Id" ColumnName="ActionInfo_Id" />
+      </EndProperty>
+      <EndProperty Name="R_UserInfo_ActionInfo">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

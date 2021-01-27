@@ -1,0 +1,151 @@
+﻿@model Heima8.OA.Model.UserInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditById</title>
+    <link href="~/Content/layuiadmin/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/layuiadmin/style/admin.css" rel="stylesheet" />
+</head>
+<body>
+        
+        <div class="layui-form" lay-filter="layuiadmin-form-useradmin" id="layuiadmin-form-useradmin" style="padding: 20px 0 0 0;">
+            @Html.HiddenFor(model => model.Id)
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-inline">
+                    @Html.EditorFor(model => model.UName, new { htmlAttributes = new { @class = "layui-input" } })
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-inline">
+                    @Html.EditorFor(model => model.Pwd, new { htmlAttributes = new { @class = "layui-input" } })
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">昵称</label>
+                <div class="layui-input-inline">
+                    @Html.EditorFor(model => model.ShowName, new { htmlAttributes = new { @class = "layui-input" } })
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">备注</label>
+                <div class="layui-input-inline">
+                    @Html.EditorFor(model => model.Remark, new { htmlAttributes = new { @class = "layui-input" } })
+                </div>
+            </div>
+            <div class="layui-form-item layui-hide">
+                <label class="layui-form-label">修改时间</label>
+                <div class="layui-input-inline">
+                    @Html.EditorFor(model => model.ModifiedOn, new { htmlAttributes = new { @class = "layui-input", @id= "ModifiedOn" } })
+                </div>
+            </div>
+    
+            <div class="layui-form-item layui-hide">
+                <label class="layui-form-label">提交时间</label>
+                <div class="layui-input-inline">
+                    @Html.EditorFor(model => model.SubTime, new { htmlAttributes = new { @class = "layui-input", @id = "SubTime" } })
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-hide">
+                <input type="button" lay-submit lay-filter="LAY-user-front-submit" id="LAY-user-front-submit" value="确认">
+            </div>
+    </div>
+    
+    <script src="../../Content/layuiadmin/layui/layui.js"></script>
+    <script>
+            layui.config({
+                base: '/Content/layuiadmin/' //静态资源所在路径
+            }).extend({
+                index: 'lib/index' //主入口模块
+            }).use(['index', 'form', 'upload'], function(){
+                var $ = layui.$
+                , form = layui.form;
+                //, upload = layui.upload;
+
+                //监听提交
+
+
+
+            });
+
+    </script>
+</body>
+</html>
+
+
+
+@*<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+    <link href="~/Content/layuiadmin/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/layuiadmin/style/admin.css" rel="stylesheet" />
+</head>
+<body>
+    @*u.Id, u.UName, u.Remark, u.ShowName, u.SubTime, u.ModifiedOn, u.Pwd*@
+    @*<div class="layui-form" lay-filter="layuiadmin-form-useradmin" id="layuiadmin-form-useradmin" style="padding: 20px 0 0 0;">
+            <div class="layui-form-item">
+                <div class="layui-input-inline">
+                    <input type="hidden" id="Id" name="Id" class="layui-input" autocomplete="off">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="UName" name="UName" lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="Pwd" name="Pwd" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">昵称</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="ShowName" name="ShowName" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">备注</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="Remark" name="Remark" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-hide">
+                <input type="button" lay-submit lay-filter="LAY-user-front-submit" id="LAY-user-front-submit" value="确认">
+            </div>
+        </div>
+        <script src="../../Content/layuiadmin/layui/layui.js"></script>
+        <script>
+            layui.config({
+                base: '/Content/layuiadmin/' //静态资源所在路径
+            }).extend({
+                index: 'lib/index' //主入口模块
+            }).use(['index', 'form', 'upload'], function(){
+                var $ = layui.$
+                , form = layui.form;
+                //, upload = layui.upload;
+
+                //监听提交
+
+
+
+            });
+
+        </script>
+    </body>
+    </html>*@
+

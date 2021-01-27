@@ -1,0 +1,86 @@
+﻿@model Heima8.OA.Model.DailyWork
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditById</title>
+    <link href="~/Content/layuiadmin/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/layuiadmin/style/admin.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="layui-form" lay-filter="layuiadmin-form-useradmin" id="layuiadmin-form-useradmin" style="padding: 50px 120px 0 0;">
+        @Html.AntiForgeryToken()
+        <div class="layui-form-item layui-hide">
+            <label class="layui-form-label">Id</label>
+            <div class="layui-input-block">
+                @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @class = "layui-input" } })
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">科室名称</label>
+            <div class="layui-input-block">
+                @*@Html.EditorFor(model => model.WorkDept, new { htmlAttributes = new { @class = "layui-input" } })*@
+                @Html.DropDownList("SysDeptId", (SelectList)ViewData["sysDepts"], htmlAttributes: new { @class = "layui-input-block" })
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">问题描述</label>
+            <div class="layui-input-block">
+                @Html.EditorFor(model => model.WorkName, new { htmlAttributes = new { @class = "layui-input" } })
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">处理方法</label>
+            <div class="layui-input-block">
+                @Html.TextAreaFor(model => model.WorkContent, new { @class = "layui-textarea" })
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">处理语句</label>
+            <div class="layui-input-block">
+                @Html.TextAreaFor(model => model.SqlLog, new { @class = "layui-textarea" })
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">处理人</label>
+            <div class="layui-input-block">
+                @Html.DropDownList("UserInfoId", (SelectList)ViewData["userInfos"], htmlAttributes: new { @class = "layui-input-block" })
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">备注</label>
+            <div class="layui-input-block">
+                @Html.TextAreaFor(model => model.Remark, new { @class = "layui-textarea" })
+            </div>
+        </div>
+        <div class="layui-form-item layui-hide">
+            <input type="button" lay-submit lay-filter="LAY-user-front-submit" id="LAY-user-front-submit" value="确认">
+        </div>
+    </div>
+
+    <script src="../../Content/layuiadmin/layui/layui.js"></script>
+    <script>
+            layui.config({
+                base: '/Content/layuiadmin/' //静态资源所在路径
+            }).extend({
+                index: 'lib/index' //主入口模块
+            }).use(['index', 'form', 'upload'], function(){
+                var $ = layui.$
+                , form = layui.form;
+                //, upload = layui.upload;
+
+                //监听提交
+
+
+
+            });
+
+    </script>
+</body>
+</html>
